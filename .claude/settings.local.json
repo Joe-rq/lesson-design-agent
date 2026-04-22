@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/references/templates\")",
+      "Bash(mkdir -p \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/references/patterns\")",
+      "Bash(mkdir -p \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/references/anti-patterns\")",
+      "Bash(mkdir -p \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/scripts\")",
+      "Bash(mkdir -p \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/memory/patterns\")",
+      "Bash(cp SKILL.md .claude/skills/lesson-design-agent/)",
+      "Bash(cp references/workflow-guide.md .claude/skills/lesson-design-agent/references/)",
+      "Bash(cp references/checkpoint-guide.md .claude/skills/lesson-design-agent/references/)",
+      "Bash(cp \"references/学情分析解读指南.md\" .claude/skills/lesson-design-agent/references/)",
+      "Bash(cp references/templates/教案模板.md .claude/skills/lesson-design-agent/references/templates/)",
+      "Bash(rm:*)"
+    ]
+  }
+}

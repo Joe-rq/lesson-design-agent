@@ -1,0 +1,10 @@
+[project]
+name = "lesson-design-agent"
+version = "1.0.0"
+description = "教案设计智能 Agent - 基于7阶段工作流的主题班会课/思政课教案设计 Skill"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+media = [
+    "yt-dlp",
+]
