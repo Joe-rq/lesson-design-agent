@@ -15,3 +15,13 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# 本地环境配置（含个人路径和权限）
+.claude/settings.local.json
+
+# Playwright 运行时产物
+.playwright-mcp/
+
+# 运营侧内容（小红书配图文案、发布记录等）
+image-cards/
+posts/
