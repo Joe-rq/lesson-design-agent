@@ -31,7 +31,11 @@
       "Bash(python \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/scripts/entity_check.py\" --items \"a,b,c,d,e\" --stage \"教案初稿\")",
       "Bash(42plugin publish:*)",
       "Bash(printf '\\\\n\\\\n\\\\n\\\\n')",
-      "Bash(printf '教案设计智能 Agent\\\\n基于四层元架构的7阶段工作流，一键生成主题班会课/思政课完整教案\\\\njoe\\\\n1.1.0\\\\nMIT\\\\n')"
+      "Bash(printf '教案设计智能 Agent\\\\n基于四层元架构的7阶段工作流，一键生成主题班会课/思政课完整教案\\\\njoe\\\\n1.1.0\\\\nMIT\\\\n')",
+      "Bash(winpty 42plugin:*)",
+      "Bash(pip install:*)",
+      "Bash(python -c ':*)",
+      "Bash(42plugin info:*)"
     ]
   }
 }
