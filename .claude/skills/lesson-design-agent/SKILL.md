@@ -5,7 +5,7 @@ metadata:
   title: 教案设计智能 Agent
   description_zh: 基于四层元架构的7阶段工作流，一键生成主题班会课/思政课完整教案。需求澄清→学情调研→教案初稿→迭代优化→配套资源→试讲打磨→定稿输出，附带PPT设计、问卷生成、素材下载。
   author: joe
-  version: 1.0.0
+  version: 1.1.0
   license: MIT
 ---
 

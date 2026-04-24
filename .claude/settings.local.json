@@ -28,7 +28,10 @@
       "Bash(python \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/scripts/version_track.py\" --from v1 --to v2 --requirements \"r1,r2,r3\" --changes \"c1\")",
       "Bash(python \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/scripts/entity_check.py\" --items \"a,b,c,d,e,f\" --stage \"教案初稿\")",
       "Bash(python \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/scripts/version_track.py\" --from v2 --to v3 --requirements \"r1,r2,r3,r4,r5,r6,r7\" --changes \"c1\")",
-      "Bash(python \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/scripts/entity_check.py\" --items \"a,b,c,d,e\" --stage \"教案初稿\")"
+      "Bash(python \"D:/03resource/_Projects/lesson-design-agent/.claude/skills/lesson-design-agent/scripts/entity_check.py\" --items \"a,b,c,d,e\" --stage \"教案初稿\")",
+      "Bash(42plugin publish:*)",
+      "Bash(printf '\\\\n\\\\n\\\\n\\\\n')",
+      "Bash(printf '教案设计智能 Agent\\\\n基于四层元架构的7阶段工作流，一键生成主题班会课/思政课完整教案\\\\njoe\\\\n1.1.0\\\\nMIT\\\\n')"
     ]
   }
 }
