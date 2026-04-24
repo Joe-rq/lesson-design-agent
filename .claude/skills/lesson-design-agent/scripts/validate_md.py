@@ -11,6 +11,11 @@
 import argparse
 import re
 import sys
+import io
+
+# Windows 终端 UTF-8 兼容
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 from pathlib import Path
 
 
@@ -85,11 +90,23 @@ def validate_structure(content: str) -> tuple[list[str], list[str]]:
                 if not re.search(elem_pattern, section_content):
                     errors.append(f"环节 '{section_name}' 缺少: {elem_name}")
 
+    # 提取课时时长
+    lesson_duration = 45  # 默认 45 分钟
+    duration_match = re.search(r"课时[：:]*\s*(\d+)\s*分钟", content)
+    if duration_match:
+        lesson_duration = int(duration_match.group(1))
+    else:
+        # 尝试从基本信息中提取
+        duration_match2 = re.search(r"(\d+)\s*分钟", content[:500])
+        if duration_match2:
+            lesson_duration = int(duration_match2.group(1))
+
     # 检查时间分配
     time_mentions = re.findall(r"(\d+)\s*分钟", content)
     total_time = sum(int(t) for t in time_mentions)
-    if total_time > 50 and "45" in content:
-        warnings.append(f"时间总和 {total_time} 分钟，可能超过 45 分钟课时")
+    time_threshold = int(lesson_duration * 1.1)
+    if total_time > time_threshold:
+        warnings.append(f"时间总和 {total_time} 分钟，可能超过 {lesson_duration} 分钟课时（阈值 {time_threshold} 分钟）")
 
     # 检查素材引用与资源清单一致性
     resource_match = re.search(r"##?\s*教学资源.*?(?=##|\Z)", content, re.DOTALL | re.IGNORECASE)

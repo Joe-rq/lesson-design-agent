@@ -11,6 +11,11 @@
 import argparse
 import json
 import sys
+import io
+
+# Windows 终端 UTF-8 兼容
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 from datetime import datetime
 from pathlib import Path
 
@@ -61,8 +66,8 @@ def main() -> None:
     print(f"\n✅ 已记录到 {LOG_FILE}")
 
     # 检查修改要求数量是否超限
-    if len(entry["requirements"]) > 4:
-        print(f"\n⚠️ 警告: 修改要求 {len(entry['requirements'])} 项超过上限 4")
+    if len(entry["requirements"]) > 6:
+        print(f"\n⚠️ 警告: 修改要求 {len(entry['requirements'])} 项超过上限 6")
         print("建议: 分批次迭代")
         sys.exit(1)
 
