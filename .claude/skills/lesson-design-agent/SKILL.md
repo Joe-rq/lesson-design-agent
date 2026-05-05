@@ -95,7 +95,7 @@ Layer 1: 认知边界层 → 元反思检查点(6问) + 实体约束 + 问题重
 | 学情调研 | 了解学生认知起点、情感态度、真实困惑 | 问卷 ≤ 15 题（5板块） | 课前问卷、学情分析报告 | `references/workflow-guide.md` 阶段二 + `references/学情分析解读指南.md` |
 | 教案初稿 | 完成完整教案框架（**重读 design_lock.md**） | 教学环节 ≤ 5，子活动/环节 ≤ 4 | 教案初稿（v1-v10） | `references/workflow-guide.md` 阶段三 + `references/templates/教案模板.md` |
 | 迭代优化 | 根据反馈持续改进（**重读 design_lock.md**），必要时结构重组 | 单次修改 ≤ 6 项 | 迭代版本 + 迭代记录 | `references/workflow-guide.md` 阶段四 |
-| 配套资源 | PPT 内容规划 + 素材准备（**重读 design_lock.md**） | 素材 ≤ 20 个 | PPT 内容大纲 + 素材清单（实际 .pptx 制作引导用户使用 pptx-generator） | `references/workflow-guide.md` 阶段五 |
+| 配套资源 | PPT 内容规划 + 素材准备（**重读 design_lock.md**） | 素材 ≤ 20 个 | PPT 内容大纲 + 素材清单（实际 .pptx 制作引导用户使用 PPT Master） | `references/workflow-guide.md` 阶段五 |
 | 试讲打磨 | 条件触发：试讲发现问题并调整 | — | 问题记录 + 调整方案 | `references/workflow-guide.md` 阶段六 |
 | 定稿输出 | 输出最终版本（**重读 design_lock.md** 做最终一致性检查） | — | 教案终稿 + PPT + 学情报告 + 资源包 | `references/workflow-guide.md` 阶段七 |
 

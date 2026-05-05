@@ -172,8 +172,8 @@
 完成上述规划后，输出一份 PPT 内容大纲（每页标题 + 核心内容），供后续制作使用。
 
 **PPT 实际制作**：
-PPT 内容规划完成后，引导用户使用 `pptx-generator` skill 生成 .pptx 文件。
-告知用户：将上述 PPT 内容大纲提供给 pptx-generator 即可自动生成可编辑的演示文稿。
+PPT 内容规划完成后，引导用户使用 [PPT Master](https://github.com/hugohe3/ppt-master) 生成 .pptx 文件。
+告知用户：将上述 PPT 内容大纲提供给 PPT Master 即可自动生成原生可编辑的演示文稿。
 
 ---
 
