@@ -25,23 +25,29 @@
 
 ```
 .claude/skills/lesson-design-agent/
-├── SKILL.md                 # Skill 入口：工作流、约束、防护机制
-├── references/              # 参考文档
-│   ├── workflow-guide.md    # 7 阶段工作流详细指南
-│   ├── checkpoint-guide.md  # 元反思检查点指南
-│   ├── 学情分析解读指南.md  # 学情数据→教学调整映射
-│   ├── templates/           # 教案模板、问卷模板
-│   ├── patterns/            # 导入环节模板、创新教学形式库
-│   └── anti-patterns/       # 常见问题清单（6类典型问题）
-├── scripts/                 # Python 辅助脚本
-│   ├── entity_check.py      # 实体约束自动拆分
-│   ├── stage_timeout.py     # 阶段超时监控
-│   ├── validate_md.py       # Markdown 结构验证
-│   ├── version_track.py     # 版本迭代记录
-│   ├── download_media.py    # 批量下载媒体素材
-│   ├── clip_audio.py        # 按时间戳剪辑音频
-│   └── media_inventory.py   # 扫描素材目录生成清单
-└── memory/                  # 积累飞轮（运行时积累经验）
+├── SKILL.md                       # Skill 入口：工作流、执行纪律、防护机制
+├── references/                    # 参考文档
+│   ├── workflow-guide.md          # 7 阶段工作流详细指南（含阶段导航索引）
+│   ├── checkpoint-guide.md        # 元反思检查点指南（BLOCKING/GATE/Checkpoint）
+│   ├── design_lock_template.md    # 设计锁定模板（反漂移机制）
+│   ├── 学情分析解读指南.md        # 学情数据→教学调整映射
+│   ├── templates/                 # 教案模板、问卷模板、模板索引
+│   ├── patterns/                  # 导入环节模板、创新教学形式库
+│   └── anti-patterns/             # 常见问题清单（6类典型问题）
+├── workflows/                     # 可独立运行的子工作流
+│   ├── 试讲打磨.md               # 五维检查 + 问题诊断
+│   ├── 问卷生成.md               # 标准化课前问卷生成
+│   └── 结构诊断.md               # 教案结构诊断与重组建议
+├── scripts/                       # Python 辅助脚本
+│   ├── README.md                  # 脚本索引与使用说明
+│   ├── entity_check.py            # 实体约束自动拆分
+│   ├── stage_timeout.py           # 阶段超时监控
+│   ├── validate_md.py             # Markdown 结构验证
+│   ├── version_track.py           # 版本迭代记录
+│   ├── download_media.py          # 批量下载媒体素材
+│   ├── clip_audio.py              # 按时间戳剪辑音频
+│   └── media_inventory.py         # 扫描素材目录生成清单
+└── memory/                        # 积累飞轮（运行时积累经验）
     ├── patterns/
     ├── templates/
     └── anti-patterns/
@@ -82,6 +88,40 @@ python .claude/skills/lesson-design-agent/scripts/version_track.py --from v1 --t
 # 阶段超时检查
 python .claude/skills/lesson-design-agent/scripts/stage_timeout.py --stage "教案初稿" --elapsed 180
 ```
+
+## PPT 制作
+
+本 Skill 负责 PPT 的**内容规划**（页数估算、内容筛选、大纲输出），实际 .pptx 文件生成使用 [pptx-generator](https://github.com/Joe-rq/pptx-generator)。
+
+### 工作流程
+
+```
+教案定稿 → 本 Skill 输出 PPT 内容大纲 → pptx-generator 生成 .pptx
+```
+
+1. 阶段五（配套资源）会根据课时估算 PPT 页数（`课时 × 0.8 ~ 1.0`），并筛选保留内容
+2. 输出每页标题 + 核心内容的 PPT 大纲
+3. 将大纲提供给 pptx-generator，自动生成可编辑的演示文稿
+
+### 使用 pptx-generator
+
+在 Claude Code 中直接使用 pptx-generator skill：
+
+```
+请根据以下 PPT 大纲生成演示文稿：[粘贴大纲内容]
+```
+
+或指定文件：
+
+```
+请使用 pptx-generator 根据 ppt-outline.md 生成 PPT
+```
+
+pptx-generator 支持：
+- 多种模板风格（学术、商务、创意等）
+- 原生可编辑的 DrawingML 元素（非图片导出）
+- 自动配色与排版
+- 导出为 .pptx 格式，可直接在 PowerPoint 中编辑
 
 ## 技术要求
 
